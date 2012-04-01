@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>CSS-tooltips</title>
+<style type="text/css">
+a.tooltip{position:relative}
+a.tooltip span{display:none;}
+a.tooltip:hover span {
+display:block;
+position:absolute;
+top:20px;
+left:20px;
+padding: 6px;
+border:3px solid #000;
+background-color:#777;
+color:#fff;}
+</style>
+</head>
+<body>
+<a href="#" class="tooltip">—сылка <span>Tooltip дл€ ссылки</span> 1</a>
+<a class="tooltip"  href="#">—сылка <span>Tooltip дл€ ссылки</span> 2</a>
+<a class="tooltip" href="#">—сылка <span>Tooltip дл€ ссылки </span> 3</a>
+</body>
+</html>

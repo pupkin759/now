@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title> New Document </title>
+ 
+<script type="text/javascript">
+function over(td)
+{
+var input=document.getElementById('color');
+input.parentNode.style.background=td.style.background;
+}
+</script>
+</head>
+  
+   
+<body>
+
+<br> <a href="http://www.jvscript.narod.ru/" style="background:#12ff78" onmouseover="over(this)">Orange</a>
+<br> <a href="http://www.jvscript.narod.ru/" style="background:#986ff1" onmouseover="over(this)">Yellow</a>
+
+
+<table width="50" height="50">
+<td style="background:#12ff78" onmouseover="over(this)">
+<td style="background:#986ff1" onmouseover="over(this)">
+</table>
+
+<table width="50" height="50">
+<td  style="background:#CCCCCC" >
+<input type="hidden" id="color">
+</table>
+
+</body>
+</html>
+
+

@@ -1,0 +1,35 @@
+<html>
+</head>
+<title>Всплывающие подсказки на javascript</title>
+<style type="text/css">
+a.tooltip{position:relative}
+a.tooltip span{display:none;}
+#box{display:none;position:absolute;padding:10px;color:#fff;background:#333}
+</style>
+<head>
+<body>
+<a href="#" onmouseover="tooltip(event)" onmouseover="return false" onmouseout="clearBox()" title="Tooltip 1">Tooltip 1</a></br>
+<a width="100px" onmousemove="tooltip(event)" onmouseover="return false" onmouseout="clearBox()" href="#" title="Tooltip 2">Tooltip 2</a></br>
+<a onmousemove="tooltip(event)" onmouseover="return false" onmouseout="clearBox()" href="#" title="Tooltip 3">Tooltip 3</a></br>
+<div id="box" >TOOLTIP</div>
+<script type="text/javascript">
+function tooltip(e){
+if(!e)e=window.event;
+var x,y,titl,it;//переменные
+x=e.clientX; //координата x курсора
+y=e.clientY; //координата y курсора
+if(e.target){var titl=e.target.getAttribute('title');} //пишем в переменную titl значение атрибута title ссылки
+else{var titl=e.srcElement.getAttribute('title');}// костыль для IE
+it=document.getElementById('box')//всплывающий блок
+it.style.display='inline'; //назначаются стили
+it.style.left=x+10+'px';
+it.style.top=y+10+'px';
+it.innerHTML=titl; //вставляется в код блока значение переменной titl
+e.target.getAttribute('title').preventDefault()
+}
+function clearBox(){
+document.getElementById('box').style.display='none'; //скрывается блок
+}
+</script>
+</body>
+</html>
